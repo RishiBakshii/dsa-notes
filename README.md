@@ -1,182 +1,106 @@
-Data Structure
-
-Data Structure can be defined as the group of data elements which provides an efficient way of storing and organising data in the computer so that it can be used efficiently.
-- widely used
-- Computer Science
-- Operating System, Compiler Design, Artifical intelligence, Graphics and many more.
-- handle the data in an efficient way.
-- store and retrieve the user’s data as fast as possible
-- building blocks of any program 
-
-## Baisic terminology
-
-Data: Data can be defined as an elementary value or the collection of values, for example, student’s name and its id are the data about the student.
+## what are trees
+![](https://www.tutorialride.com/images/data-structures/structure-of-tree.jpeg)
+- hierarchical data structure
+- most powerful and advanced data structures.
+- non-linear data structure compared to arrays, linked lists, stack and queue.
+- nodes connected by edges.
+- Tree is a collection of elements called Nodes, where each node can have arbitrary number of children
+- Tree is a collection of elements called Nodes, where each node can have arbitrary number of children. 
 
 
-Group Items: Data items which have subordinate data items are called Group item, for example, name of a student can have first name and the last name. for example (dict)
+## Levels of a node
+- Levels of a node represents the number of connections between the node and the root. It represents generation of a node. If the root node is at level 0, its next node is at level 1, its grand child is at level 2 and so on. Levels of a node can be shown as follows
+![](https://www.tutorialride.com/images/data-structures/levels-of-tree.jpeg)
 
-Record: Record can be defined as the collection of various data items, for example, if we talk about the student entity, then its name, address, course and marks can be grouped together to form the record for the student.
+## Binary Tree Traversal
+- Binary tree traversing is a process of accessing every node of the tree and exactly once. A tree is defined in a recursive manner. Binary tree traversal also defined recursively. 
 
-File: A File is a collection of various records of one type of entity, for example, if there are 60 employees in the class, then there will be 20 records in the related file where each record contains the data about each employee.
+## here are three techniques of traversal:
+- Preorder Traversal
+	![](https://www.tutorialride.com/images/data-structures/preorder-traversal.jpeg)
+	- Step 1 : Start from the Root.
+	- Step 2 : Then, go to the Left Subtree.
+	- Step 3 : Then, go to the Right Subtree.
 
-Attribute and Entity: An entity represents the class of certain objects. it contains various attributes. Each attribute represents the particular property of that entity.
+- Postorder Traversal
+- Inorder Traversal
 
-Field: Field is a single elementary unit of information representing the attribute of an entity
 
-## Need of Data Structures
-- Processor speed
-- Data Search
-- Multiple requests
+## Binary Tree
+![](https://www.tutorialride.com/images/data-structures/binary-tree.jpeg)
+- maximum 2 children
+- It is a method of placing and locating the records in a database
+- data store in (RAM)
 
-## Advantages of Data Structures
-- Efficiency - array not good as we to traverse the whole array so ordered array, binray search tree or hash tables
-- Reusability -  Implementation of data structures can be compiled into libraries which can be used by different clients
-- Abstraction - The client program uses the data structure through interface only, without getting into the implementation details.
+## Representation of Binary Tree using Array
+![](https://www.tutorialride.com/images/data-structures/binary-tree-using-array.jpeg)
 
-## Data Structure Classification
-- ![](https://static.javatpoint.com/ds/images/ds-introduction.png)
+- Array index is a value in tree nodes and array value gives to the parent node of that particular index or node. Value of the root node index is always -1 as there is no parent for root. When the data item of the tree is sorted in an array, the number appearing against the node will work as indexes of the node in an array.
 
-Linear Data Structures: A data structure is called linear if all of its elements are arranged in the linear order. In linear data structures, the elements are stored in non-hierarchical way where each element has the successors and predecessors except the first and last element. example (Arrays 
+![](https://www.tutorialride.com/images/data-structures/location-number-array-tree.jpeg)
 
-- arrays :The elements of array share the same variable name but each one carries a different index number known as subscript. The array can be one dimensional, two dimensional or multidimensional.
+## Binary Search Tree
+- special property called BST
+- each child or siblings sotre their parent pointers
+- key defines a key which is stored at the node.
+- Binary Search Tree is a binary tree where each node contains only smaller values in its left subtree and only larger values in its right subtree
+![](https://www.tutorialride.com/images/data-structures/binary-search-tree.jpeg)
+- it is used to enchance the performance of binary tree
+- It focuses on the search operation in binary tree.
+- Every binary search tree is a binary tree, but all the binary trees need not to be binary search trees.
 
-- Linked List :Linked list is a linear data structure which is used to maintain a list in the memory. It can be seen as the collection of nodes stored at non-contiguous memory locations. Each node of the list contains a pointer to its adjacent node.
+## Binary Search Tree Operations
+- ### Insert Operation
+	- Insert operation is performed with O(log n) time complexity in a binary search tree.
+	- Insert operation starts from the root node. It is used whenever an element is to be inserted.
+![](https://www.tutorialride.com/images/data-structures/insert-operation.jpeg)
 
-- Stack: Stack is a linear list in which insertion and deletions are allowed only at one end, called top.
+	- The following algorithm shows the insert operation in binary search tree:
+	- Step 1: Create a new node with a value and set its left and right to NULL. 
 
-- Queue: Queue is a linear list in which elements can be inserted only at one end called rear and deleted only at the other end called front.
+- Step 2: Check whether the tree is empty or not. 
 
-## Non Linear Data Structures: This data structure does not form a sequence i.e. each item or element is connected with two or more other items in a non-linear arrangement. The data elements are not arranged in sequential structure.
+- Step 3: If the tree is empty, set the root to a new node. 
 
-- Trees: Trees are multilevel data structures with a hierarchical relationship among its elements known as nodes. The bottommost nodes in the herierchy are called leaf node while the topmost node is called root node. Each node contains pointers to point adjacent nodes.
-	- parent-child relationship 
+- Step 4: If the tree is not empty, check whether a value of new node is smaller or larger than the node (here it is a root node).
 
-## Operations on data structure
-- Traversing: ds mein ghumna
-- Insertion: Insertion can be defined as the process of adding the elements to the data structure at any location.
-- Deletion: to delete data , and random location deletion is also possible
-	- If we try to delete an element from an empty data structure then underflow occurs
-- Searching: kisi bhi elemtn ko dhundna (linear seach, binary search)
-- Sorting: process of rearranging the data (nsertion sort, selection sort, bubble sort, merge sort, heap sort)
-- Merging: When two lists List A and List B of size M and N respectively, of similar type of elements, clubbed or joined to produce the third list, List C of size (M+N), then this process is called merging
+- Step 5: If a new node is smaller than or equal to the node, move to its left child. 
 
-## Array ( Advantages of Array, Need of using Array)
-- similar type of data items
-- contiguous memory locations
-- derived data type in C programming language
-- primitive type of data such as int, char, double, float, etc.
-- randomly accessed by using its index number
-- we just need to know the  base address of the array in order to visit each element one by one.
+- Step 6: If a new node is larger than the node, move to its right child. 
 
-## Memory Allocation of the array
-- types of index
-	- 0 (zero – based indexing) : The first element of the array will be arr[0].
-	- 1 (one – based indexing) : The first element of the array will be arr[1].
-	- n (n – based indexing) : The first element of the array can reside at any random index number.
+- Step 7: Repeat the process until we reach to a leaf node.
 
-## Accessing Elements of an array
-- base address
-- size of element in bytes
-- which type of indexing array follows
+## Search Operation
+- Search operation is performed with O(log n) time complexity in a binary search tree.
+- This operation starts from the root node. It is used whenever an element is to be searched.
+- The following algorithm shows the search operation in binary search tree:
+- Step 1: Read the element from the user .
 
-## 2d array ( array ke andar array)
-- collection of arrays/rows&columns
-- organised as matrices
-- relational database look alike data structure.
-- **syntax:** : int arr[max_rows][max_columns];  
-![matrics](https://static.javatpoint.com/ds/images/ds-2d-array.png) 
+- Step 2: Compare this element with the value of root node in a tree. 
 
-## How do we access data in a 2D array
-- arr[row][column]
-- int x = a[i][j];   // to store the array element
-- to make everyting in 2d array zero
-- ```cpp
-for ( int i=0; i<n ;i++)  
-{  
-    for (int j=0; j<n; j++)   
-    {  
-        a[i][j] = 0;   
-    }  
-}
-```
-## Initializing 2D Arrays
-- int arr[2][2] = {[0,0],[0,0]};
-- total elements= number of rows * number of columns
+- Step 3: If element and value are matching, display “Node is Found” and terminate the function. 
 
-## Storing User’s data into a 2D array and printing it
+- Step 4: If element and value are not matching, check whether an element is smaller or larger than a node value. 
 
-```cpp
-#include <iostream>
+- Step 5: If an element is smaller, continue the search operation in left subtree. 
 
-using namespace std;
+- Step 6: If an element is larger, continue the search operation in right subtree.
 
-int main() {
-    int arr[3][3], i, j;
+- Step 7: Repeat the same process until we found the exact element. 
 
-    // Input elements
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
-            cout << "Enter a[" << i << "][" << j << "]: ";
-            cin >> arr[i][j];
-        }
-    }
+- Step 8: If an element with search value is found, display “Element is found” and terminate the function. 
 
-    // Print elements
-    cout << "\nPrinting the elements:\n";
-    for (i = 0; i < 3; i++) {
-        cout << endl;
-        for (j = 0; j < 3; j++) {
-            cout << arr[i][j] << "\t";
-        }
-    }
+- Step 9: If we reach to a leaf node and the search value is not match to a leaf node, display “Element is not found” and terminate the function.
 
-    return 0;
-}
-```
+## There are 4 types of binary tree:
+	- Full Binary Tree
+	- Complete Binary Tree
+	- Skewed Binary Tree
+	- Extended Binary Tree
+![](https://bcastudyguide.files.wordpress.com/2020/07/img_20200720_091915.jpg)
+![](https://bcastudyguide.files.wordpress.com/2020/07/img_20200720_091957.jpg)
+![](https://bcastudyguide.files.wordpress.com/2020/07/img_20200720_091939.jpg)
+![](https://bcastudyguide.files.wordpress.com/2020/07/img_20200720_091925.jpg)
 
-## Sparse matrix example
-- Here is an example of a 4 x 4 matrix containing 12 zero values and 4 non-zero values, giving it a sparsity of 3:
 
-```cpp
-[[5, 0, 0, 0],
-[0, 11, 0, 0],
-[0, 0, 25, 0],
-[0, 0, 0, 7]]
-```
-
-- Representing a sparse matrix by a 2D array leads to wastage of lots of memory as zeroes in the matrix are of no use in most of the cases. So, instead of storing zeroes with non-zero elements, we only store non-zero elements. This means storing non-zero elements with triples- (Row, Column, value).
-
-- Sparse Matrix Representations can be done in many ways following are two common representations:
-
-	- Array representation
-	- Linked list representation
-
-Method 1: Using Arrays
-
-- 2D array is used to represent a sparse matrix in which there are three rows named as
-
-- Row: Index of row, where non-zero element is located
-- Column: Index of column, where non-zero element is located
-- Value: Value of the non zero element located at index – (row,column)
-
-- ![](https://media-geeksforgeeks-org.cdn.ampproject.org/i/s/media.geeksforgeeks.org/wp-content/uploads/Sparse-Matrix-Array-Representation1.png)
-
-Method 2: Using Linked Lists
-
-In linked list, each node has four fields. These four fields are defined as:
-
-- Row: Index of row, where non-zero element is located
-- Column: Index of column, where non-zero element is located
-- Value: Value of the non zero element located at index – (row,column)
-- Next node: Address of the next node
-![](https://media-geeksforgeeks-org.cdn.ampproject.org/i/s/media.geeksforgeeks.org/wp-content/uploads/Sparse-Matrix-Linked-List-22.png)
-
-## sparse ( upper and lower triangular matrics)
-- An upper triangular matrix is a square matrix in which all entries below the main diagonal are zero (only nonzero entries are found above the main diagonal – in the upper triangle).
-
-- A lower triangular matrix is a square matrix in which all entries above the main diagonal are zero
-(only nonzero entries are found below the main diagonal – in the lower triangle). See the picture
-below.
-
-- ***– Notation: An upper triangular matrix is typically denoted with U and a lower triangular matrix***
-
+ 
